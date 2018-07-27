@@ -5,5 +5,5 @@ This challenge will demonstrate how to perform CRUD operations for AngularJS bas
 ### Run application:
 
 ```bash
-npm install & npm start
+npm install && npm start
 ```

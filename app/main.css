@@ -1,0 +1,28 @@
+html, body {
+  height: 100vh;
+}
+body {
+  background: #f7f7f7;
+  padding: 2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.btn:focus {
+  outline: none;
+}
+.todo {
+  max-width: 600px;
+  margin: 2em auto;
+  box-shadow: 0px 0px 10px #dcdcdc;
+}
+.todo-list {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: -2px;
+}
+.todo-list-item {
+  margin: 1em 0;
+}
+.todo-list-item :disabled {
+  text-decoration: line-through;
+}
+

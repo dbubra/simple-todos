@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Todos</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+  <script src="main.js"></script>
+</head>
+<body>
+  <div class="container" ng-controller="MainCtrl" ng-init="fetch()">
+    <h1 class="text-center">Todos</h1>
+    <div class="list-group todo">
+      <form class="list-group-item" ng-submit="create(newTodo)">
+        <input class="form-control" ng-model="newTodo.title" placeholder="What needs to be completed?">
+      </form>
+      <div class="list-group-item todo-list">
+        <form class="input-group todo-list-item" ng-submit="update(todo)" ng-repeat="todo in todos | orderBy:'-id' | filter:filter">
+          <input class="form-control" ng-model="todo.title" ng-disabled="todo.completed" placeholder="">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="todo.completed = !todo.completed; update(todo)">
+              <span class="glyphicon" ng-class="{'glyphicon-check': todo.completed, 'glyphicon-unchecked': !todo.completed}"></span>
+            </button>
+            <button class="btn btn-default" type="button" ng-click="remove(todo)">
+              <span class="glyphicon glyphicon-minus"></span>
+            </button>
+          </span>
+        </form>
+      </div>
+      <div class="list-group-item form-inline clearfix todo-foot">
+        <div class="pull-right">
+          <select ng-model="filter.completed" class="form-control">
+            <option value="">All</option>
+            <option value="false">Active</option>
+            <option value="true">Completed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "simple-todos",
+  "scripts": {
+    "start": "json-server db.json --static ./app"
+  },
+  "dependencies": {
+    "json-server": "^0.14.0"
+  }
+}

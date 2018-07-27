@@ -2,7 +2,7 @@
 <html lang="en" ng-app="todoApp">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Todos</title>
+  <title>Simple Todo App</title>
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="main.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
@@ -17,7 +17,7 @@
       </form>
       <div class="list-group-item todo-list">
         <form class="input-group todo-list-item" ng-submit="update(todo)" ng-repeat="todo in todos | orderBy:'-id' | filter:filter">
-          <input class="form-control" ng-model="todo.title" ng-disabled="todo.completed" placeholder="">
+          <input class="form-control" ng-model="todo.title" ng-blur="update(todo)" ng-disabled="todo.completed" placeholder="">
           <span class="input-group-btn">
             <button class="btn btn-default" type="button" ng-click="todo.completed = !todo.completed; update(todo)">
               <span class="glyphicon" ng-class="{'glyphicon-check': todo.completed, 'glyphicon-unchecked': !todo.completed}"></span>
